@@ -8,7 +8,6 @@
 </head>
 
 <body>
-  
   <div class="wrap">
 
     <header class="top">
@@ -19,18 +18,24 @@
 
       <nav class="nav">
         <a href="https://github.com/ChengChiaLee" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://chengchialee.github.io/LemonMatcha.github.io/index.html" target="_blank" rel="noreferrer">CP blog</a>
+        <a href="https://chengchialee.github.io/LemonMatcha.github.io/index.html" target="_blank" rel="noreferrer">CP Blog</a>
       </nav>
+
+      <!-- theme toggle -->
+      <button class="theme-btn" id="themeBtn" type="button">
+        <span class="theme-txt">Dark</span>
+      </button>
+      
     </header>
 
     <main>
       <section class="hero">
         <h1 class="hero-title">Posts</h1>
-        <p class="hero-sub muted">Short writeups after contests, practice, and mistakes.</p>
+        <p class="hero-sub muted">Short writeups after reading paper etc...</p>
       </section>
 
       <section class="posts">
-
+        
         <a class="post-card" href="posts/self-intro.html">
           <div class="post-top">
             <div class="post-title">Self Intro</div>
@@ -47,8 +52,6 @@
 
   </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
