@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cheng-chia Lee | Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="top">
+      <div class="brand">
+        <div class="name">Cheng-chia Lee</div>
+        <div class="tag muted">Research notes & reflections</div>
+      </div>
+
+      <nav class="nav">
+        <a href="https://github.com/ChengChiaLee" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://chengchialee.github.io/LemonMatcha.github.io/index.html" target="_blank" rel="noreferrer">CP blog</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="hero-title">Posts</h1>
+        <p class="hero-sub muted">Short writeups after contests, practice, and mistakes.</p>
+      </section>
+
+      <section class="posts">
+
+        <a class="post-card" href="posts/self-intro.html">
+          <div class="post-top">
+            <div class="post-title">Self Intro</div>
+            <div class="post-meta muted">—</div>
+          </div>
+          <div class="post-desc">Who I am and why I write this blog.</div>
+        </a>
+      </section>
+
+      <footer class="foot muted">
+        © <span id="y"></span> Cheng-chia Lee
+      </footer>
+    </main>
+
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
