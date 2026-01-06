@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Interface-Aware PINN Notes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="post-topbar">
+      <a class="back-link" href="../index.html">← back</a>
+
+      <button class="theme-btn" id="themeBtn" type="button">
+        <span class="theme-txt">Dark</span>
+      </button>
+    </div>
+
+    <h1>Interface-Aware PINN Notes</h1>
+
+    <p class="muted">
+      Non-exhaustive personal study notes summarizing interface-related PINN approaches
+      reported in the literature. These notes are intended for background understanding
+      and do not represent original contributions or a complete survey.
+    </p>
+
+    <h2>1. Domain-Decomposed PINNs</h2>
+
+    <p><b>cPINN (conservative PINN)</b></p>
+    <ul>
+      <li>Splits the domain into subdomains and enforces flux continuity across interfaces.</li>
+      <li>Encodes conservation laws explicitly through interface constraints.</li>
+      <li>Often implemented with multiple networks trained in parallel.</li>
+    </ul>
+
+    <p><b>XPINN</b></p>
+    <ul>
+      <li>General domain decomposition with separate neural networks per subdomain.</li>
+      <li>Subdomains are coupled through interface loss terms.</li>
+      <li>Commonly used for problems with non-smooth solutions or heterogeneous coefficients.</li>
+    </ul>
+
+    <p><b>FBPINN</b></p>
+    <ul>
+      <li>Uses overlapping subdomains combined via windowing or partition-of-unity ideas.</li>
+      <li>Overlaps help soften interface stitching compared to hard constraints.</li>
+      <li>Reported to scale better for larger or more complex domains.</li>
+    </ul>
+
+    <h2>2. Multi-Network Formulations for Non-Smooth PDEs</h2>
+
+    <p><b>Multi-domain PINN (M-PINN)</b></p>
+    <ul>
+      <li>Trains separate networks on different regions of the domain.</li>
+      <li>Primarily used for forward problems with piecewise-smooth solutions.</li>
+      <li>Interface conditions are imposed explicitly during training.</li>
+    </ul>
+
+    <p><b>DS-PINN / nDS-PINN</b></p>
+    <ul>
+      <li>Introduces interface continuity conditions with spatial separation strategies.</li>
+      <li>Includes normalization techniques to balance loss terms across regions.</li>
+      <li>Often applied to diffusion-type problems with material interfaces.</li>
+    </ul>
+
+    <h2>3. Interface-Aware Representations</h2>
+
+    <p><b>Discontinuity and cusp-aware neural representations</b></p>
+    <ul>
+      <li>Modify the neural representation to better express jumps or derivative cusps.</li>
+      <li>May incorporate level-set or piecewise features into the network input.</li>
+      <li>Typically problem-dependent in how interface information is encoded.</li>
+    </ul>
+
+    <h2>4. Variational and Least-Squares Neural Solvers</h2>
+
+    <p><b>Mesh-free variational deep learning approaches</b></p>
+    <ul>
+      <li>Reformulate interface PDEs using variational or least-squares objectives.</li>
+      <li>Neural networks approximate trial functions instead of enforcing strong residuals.</li>
+      <li>Interface effects are handled through weak formulations or additional terms.</li>
+    </ul>
+
+    <p><b>Piecewise neural solvers with adaptive sampling</b></p>
+    <ul>
+      <li>Employ multiple networks with least-squares objectives.</li>
+      <li>Sampling density may be adjusted based on residual magnitude.</li>
+      <li>Often used to allocate more samples near interfaces.</li>
+    </ul>
+
+    <h2>5. Adaptive and Meta Strategies</h2>
+
+    <p><b>Loss-balancing and interfaced neural network methods</b></p>
+    <ul>
+      <li>Introduce strategies to balance competing loss terms across domains.</li>
+      <li>May treat interface enforcement as a multi-objective optimization problem.</li>
+    </ul>
+
+    <p><b>Meta-learning interface conditions</b></p>
+    <ul>
+      <li>Explores learning or selecting interface constraints automatically.</li>
+      <li>Typically relies on families of related problems for training.</li>
+      <li>Proposed as a way to reduce manual tuning of interface conditions.</li>
+    </ul>
+
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
